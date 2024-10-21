@@ -460,7 +460,7 @@ except ImportError:
         return '', version, id
 
     _distributor_id_file_re = re.compile("(?:DISTRIB_ID\s*=)\s*(.*)", re.I)
-    _release_file_re = re.compile("(?:DISTRIB_RELEASE\s*=)\s*(.*)", re.I)
+    _release_file_re= re.compile("(?:DISTRIB_RELEASE\s*=)\s*(.*)", re.I)
     _codename_file_re = re.compile("(?:DISTRIB_CODENAME\s*=)\s*(.*)", re.I)
 
     def linux_distribution(distname='', version='', id='',
@@ -509,7 +509,7 @@ except ImportError:
         try:
             etc = os.listdir(_UNIXCONFDIR)
         except OSError:
-            # Probably not a Unix system
+            # Probably not a linux system
             return distname, version, id
         etc.sort()
         for file in etc:
